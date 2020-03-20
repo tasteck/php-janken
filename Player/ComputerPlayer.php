@@ -1,11 +1,10 @@
 <?php
-require './Hand/Hand.php';
 
 /**
  * Playerはhandsの中から手を出せる事は知っているが
  * 何をだせるかは知らない
  */
-class Player
+class ComputerPlayer implements Player
 {
     private $hands = [];
     private $name;
