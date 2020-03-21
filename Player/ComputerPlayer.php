@@ -8,11 +8,13 @@ class ComputerPlayer implements Player
 {
     private $hands;
     private $name;
+    private $phrase;
 
-    public function __construct(string $name, array $hands)
+    public function __construct(string $name, array $hands, $phrase = 'ワタシノカチダ')
     {
         $this->name = $name;
         $this->hands = $hands;
+        $this->phrase = $phrase;
     }
 
     public function nextHand(): Hand
@@ -23,6 +25,11 @@ class ComputerPlayer implements Player
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function signaturePhrase(): string
+    {
+        return $this->phrase;
     }
 
     public function randomHand(): Hand

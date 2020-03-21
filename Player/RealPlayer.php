@@ -8,11 +8,13 @@ class RealPlayer implements Player
 {
     private $hands;
     private $name;
+    private $phrase;
 
-    public function __construct(string $name, array $hands)
+    public function __construct(string $name, array $hands, string $phrase = 'やったぜ！')
     {
         $this->name = $name;
         $this->hands = $hands;
+        $this->phrase = $phrase;
     }
 
     public function nextHand(): Hand
@@ -23,6 +25,11 @@ class RealPlayer implements Player
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function signaturePhrase(): string
+    {
+        return $this->phrase;
     }
 
     private function inputHand(): Hand

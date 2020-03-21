@@ -8,4 +8,5 @@ Interface Player
 {
     public function nextHand(): Hand;
     public function getName(): string;
+    public function signaturePhrase(): string;
 }

@@ -17,28 +17,33 @@ class Janken
 
     public function run(): void
     {
+        $winner = $this->winner();
+
+        if ($winner) {
+            printf(sprintf("%sの勝利です！\n", $winner->getName()));
+            printf(sprintf("%s「%s」\n", $winner->getName(), $winner->signaturePhrase()));
+            return;
+        }
+
+        printf("ドローです！\n");
+    }
+
+    public function winner(): ?Player
+    {
         $hand_1 = $this->player_1->nextHand();
         $hand_2 = $this->player_2->nextHand();
 
         printf(sprintf("%sは%sを出した！！\n", $this->player_1->getName(), $hand_1->getValue()));
         printf(sprintf("%sは%sを出した！！\n", $this->player_2->getName(), $hand_2->getValue()));
 
-        $this->printResult($hand_1, $hand_2);
-    }
+        $result = $hand_1->battle($hand_2);
 
-
-    public function printResult(Hand $hand_1, Hand $hand_2): void
-    {
-        $result  = $hand_1->battle($hand_2);
         if ($result === 'win') {
-            printf(sprintf("%sの勝利です！\n", $this->player_1->getName()));
-            return;
+            return $this->player_1;
         }
         if ($result === 'lose') {
-            printf(sprintf("%sの勝利です！\n", $this->player_2->getName()));
-            return;
+            return $this->player_2;
         }
-
-        printf("ドローです！\n");
+        return null;
     }
 }
