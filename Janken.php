@@ -29,16 +29,16 @@ class Janken
 
     public function printResult(Hand $hand_1, Hand $hand_2): void
     {
-        switch ($hand_1->battle($hand_2)) {
-            case 'win':
-                printf(sprintf("%sの勝利です！\n", $this->player_1->getName()));
-                return;
-            case 'lose':
-                printf(sprintf("%sの勝利です！\n", $this->player_2->getName()));
-                return;
-            case 'draw':
-                printf("ドローです！\n");
-                return;
+        $result  = $hand_1->battle($hand_2);
+        if ($result === 'win') {
+            printf(sprintf("%sの勝利です！\n", $this->player_1->getName()));
+            return;
         }
+        if ($result === 'lose') {
+            printf(sprintf("%sの勝利です！\n", $this->player_2->getName()));
+            return;
+        }
+
+        printf("ドローです！\n");
     }
 }
