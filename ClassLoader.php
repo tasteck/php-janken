@@ -1,9 +1,9 @@
 <?php
-require 'Janken.php';
-require './Player/Player.php';
-require './Player/ComputerPlayer.php';
-require './Player/RealPlayer.php';
-require './Hand/Hand.php';
-require './Hand/Paper.php';
-require './Hand/Scissors.php';
-require './Hand/Rock.php';
+require './src/Janken.php';
+require './src/Player/Player.php';
+require './src/Player/ComputerPlayer.php';
+require './src/Player/RealPlayer.php';
+require './src/Hand/Hand.php';
+require './src/Hand/Paper.php';
+require './src/Hand/Scissors.php';
+require './src/Hand/Rock.php';
