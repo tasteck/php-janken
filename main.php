@@ -1,12 +1,5 @@
 <?php
-require 'Janken.php';
-require './Player/Player.php';
-require './Player/ComputerPlayer.php';
-require './Player/RealPlayer.php';
-require './Hand/Hand.php';
-require './Hand/Paper.php';
-require './Hand/Scissors.php';
-require './Hand/Rock.php';
+require 'ClassLoader.php';
 
 $hands = [
     new Paper(),
@@ -14,7 +7,7 @@ $hands = [
     new Rock()
 ];
 
-$player_1 = new RealPlayer('Yamashita', $hands);
+$player_1 = new RealPlayer('You', $hands);
 $player_2 = new ComputerPlayer('Jiro', $hands);
 
 $janken_app = new Janken($player_1, $player_2);

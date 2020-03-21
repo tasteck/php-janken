@@ -1,8 +1,8 @@
 <?php
 
 /**
- * JankenApplicationは参加しているプレイヤーについては知っているが
- * 何(どんな手)と何(どんな手)が勝負するのかは知らない
+ * 実際にジャンケンを行うクラス
+ * Jankenクラスはは参加しているプレイヤーがCPなのか人間なのかは知らない
  */
 class Janken
 {
@@ -25,6 +25,7 @@ class Janken
 
         $this->printResult($hand_1, $hand_2);
     }
+
 
     public function printResult(Hand $hand_1, Hand $hand_2): void
     {
