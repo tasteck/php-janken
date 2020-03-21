@@ -1,11 +1,14 @@
 <?php
 
 /**
- * Rockは自分が何に勝てるかを知っているが
- * 相手が何かは知らない
+ * Rockは自分が何に勝てるかを知っている
  */
 class Rock extends Hand
 {
+    public function getValue()
+    {
+        return 'rock';
+    }
     protected function winnableHand()
     {
         return 'scissors';
@@ -14,15 +17,5 @@ class Rock extends Hand
     protected function unwinnableHand()
     {
         return 'paper';
-    }
-
-    protected function drawHand()
-    {
-        return $this->getValue();
-    }
-
-    public function getValue()
-    {
-        return 'rock';
     }
 }
