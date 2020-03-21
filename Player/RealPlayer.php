@@ -17,7 +17,7 @@ class RealPlayer implements Player
 
     public function nextHand(): Hand
     {
-        return $this->choseHand();
+        return $this->inputHand();
     }
 
     public function getName(): string
@@ -25,7 +25,7 @@ class RealPlayer implements Player
         return $this->name;
     }
 
-    private function choseHand(): Hand
+    private function inputHand(): Hand
     {
         foreach ($this->hands as $index => $hand) {
             print(sprintf("%d: %s\n", $index, $hand->getValue()));

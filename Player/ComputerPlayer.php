@@ -6,7 +6,7 @@
  */
 class ComputerPlayer implements Player
 {
-    private $hands = [];
+    private $hands;
     private $name;
 
     public function __construct(string $name, array $hands)
@@ -17,11 +17,16 @@ class ComputerPlayer implements Player
 
     public function nextHand(): Hand
     {
-        return $this->hands[array_rand($this->hands)];
+        return $this->randomHand();
     }
 
     public function getName(): string
     {
         return $this->name;
+    }
+
+    public function randomHand(): Hand
+    {
+        return $this->hands[array_rand($this->hands)];
     }
 }
